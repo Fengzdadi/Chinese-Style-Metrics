@@ -1,0 +1,14 @@
+{
+  "name": "chinese-style-metrics",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "tsx scripts/generate-cny-metrics.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "tsx": "^4.20.5",
+    "typescript": "^5.8.2"
+  }
+}
