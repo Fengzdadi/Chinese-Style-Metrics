@@ -25,7 +25,7 @@ jobs:
         run: npm ci
 
       - name: Generate SVG
-        run: npm run generate -- --username Fengzdadi --year $(date +%Y)
+        run: npm run generate -- --username Fengzdadi --duration full-year
 
       - name: Commit and push
         run: |
