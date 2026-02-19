@@ -558,6 +558,28 @@
 <polygon points="224.5,50 237.5,56.5 224.5,63 211.5,56.5" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="211.5,56.5 224.5,63 211.5,69.5 198.5,63" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="198.5,63 211.5,69.5 198.5,76 185.5,69.5" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
+<polygon points="185.5,69.5 198.5,76 185.5,82.5 172.5,76" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
+<polygon points="237.5,46.5 250.5,40 250.5,50 237.5,56.5" fill="#4a1212" stroke="#2e0c0c" stroke-width="0.3"/>
+<polygon points="224.5,40 237.5,46.5 237.5,56.5 224.5,50" fill="#812020" stroke="#5c1717" stroke-width="0.3"/>
+<line x1="224.5" y1="40" x2="237.5" y2="46.5" stroke="#d88c8c" stroke-width="0.8" opacity="0.5"/>
+<polygon points="237.5,33.5 250.5,40 237.5,46.5 224.5,40" fill="#ca6262" stroke="#d88c8c" stroke-width="0.5"/>
+<line x1="231" y1="36.75" x2="244" y2="36.75" stroke="white" stroke-width="0.6">
+      <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="0s" repeatCount="indefinite"/>
+    </line>
+<polygon points="224.5,53 237.5,46.5 237.5,56.5 224.5,63" fill="#4a1212" stroke="#2e0c0c" stroke-width="0.3"/>
+<polygon points="211.5,46.5 224.5,53 224.5,63 211.5,56.5" fill="#812020" stroke="#5c1717" stroke-width="0.3"/>
+<line x1="211.5" y1="46.5" x2="224.5" y2="53" stroke="#d88c8c" stroke-width="0.8" opacity="0.5"/>
+<polygon points="224.5,40 237.5,46.5 224.5,53 211.5,46.5" fill="#ca6262" stroke="#d88c8c" stroke-width="0.5"/>
+<line x1="218" y1="43.25" x2="231" y2="43.25" stroke="white" stroke-width="0.6">
+      <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="0.08s" repeatCount="indefinite"/>
+    </line>
+<polygon points="198.5,46 211.5,39.5 211.5,69.5 198.5,76" fill="#5d3417" stroke="#3a210f" stroke-width="0.3"/>
+<polygon points="185.5,39.5 198.5,46 198.5,76 185.5,69.5" fill="#a25b29" stroke="#74411d" stroke-width="0.3"/>
+<line x1="185.5" y1="39.5" x2="198.5" y2="46" stroke="#f2ba93" stroke-width="0.8" opacity="0.5"/>
+<polygon points="198.5,33 211.5,39.5 198.5,46 185.5,39.5" fill="#eea16b" stroke="#f2ba93" stroke-width="0.5"/>
+<line x1="192" y1="36.25" x2="205" y2="36.25" stroke="white" stroke-width="0.6">
+      <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="0.24s" repeatCount="indefinite"/>
+    </line>
 <polygon points="250.5,53 263.5,46.5 263.5,56.5 250.5,63" fill="#4a1212" stroke="#2e0c0c" stroke-width="0.3"/>
 <polygon points="237.5,46.5 250.5,53 250.5,63 237.5,56.5" fill="#812020" stroke="#5c1717" stroke-width="0.3"/>
 <line x1="237.5" y1="46.5" x2="250.5" y2="53" stroke="#d88c8c" stroke-width="0.8" opacity="0.5"/>
@@ -866,7 +888,7 @@
 <line x1="244" y1="121.25" x2="257" y2="121.25" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="4.4s" repeatCount="indefinite"/>
     </line>
-<path id="dragonPath" d="M432.5,212.5 C442.9,212.5 448.1,212.5 458.5,212.5 C463.7,212.5 466.3,219 471.5,219 C481.9,219 487.1,219 497.5,219 C507.9,219 513.1,219 523.5,219 C528.7,219 531.3,225.5 536.5,225.5 C541.7,225.5 544.3,232 549.5,232 C554.7,232 557.3,238.5 562.5,238.5 C562.5,238.5 562.5,251.5 562.5,251.5 C572.9,251.5 578.1,251.5 588.5,251.5 C593.7,251.5 596.3,258 601.5,258 C606.7,258 609.3,264.5 614.5,264.5 C624.9,264.5 630.1,264.5 640.5,264.5 C645.7,264.5 648.3,271 653.5,271 C663.9,271 669.1,271 679.5,271 C679.5,271 679.5,284 679.5,284 C684.7,284 687.3,290.5 692.5,290.5 C702.9,290.5 708.1,290.5 718.5,290.5 C718.5,290.5 718.5,303.5 718.5,303.5 C718.5,303.5 718.5,316.5 718.5,316.5 C723.7,316.5 726.3,323 731.5,323 C731.5,323 731.5,336 731.5,336 C741.9,336 747.1,336 757.5,336 C767.9,336 773.1,336 783.5,336 C793.9,336 799.1,336 809.5,336 C814.7,336 817.3,342.5 822.5,342.5 C822.5,342.5 822.5,355.5 822.5,355.5 C827.7,355.5 830.3,362 835.5,362 C840.7,362 843.3,368.5 848.5,368.5 C858.9,368.5 864.1,368.5 874.5,368.5 C874.5,368.5 874.5,381.5 874.5,381.5 C874.5,381.5 874.5,394.5 874.5,394.5 C879.7,394.5 882.3,388 887.5,388 C887.5,388 887.5,375 887.5,375 C892.7,375 895.3,381.5 900.5,381.5" fill="none" stroke="none"/>
+<path id="dragonPath" d="M432.5,212.5 C432.5,212.5 432.5,225.5 432.5,225.5 C437.7,225.5 440.3,232 445.5,232 C450.7,232 453.3,238.5 458.5,238.5 C463.7,238.5 466.3,245 471.5,245 C471.5,245 471.5,232 471.5,232 C481.9,232 487.1,232 497.5,232 C507.9,232 513.1,232 523.5,232 C523.5,232 523.5,219 523.5,219 C523.5,219 523.5,206 523.5,206 C533.9,206 539.1,206 549.5,206 C549.5,206 549.5,219 549.5,219 C549.5,219 549.5,232 549.5,232 C549.5,232 549.5,245 549.5,245 C549.5,245 549.5,258 549.5,258 C554.7,258 557.3,264.5 562.5,264.5 C562.5,264.5 562.5,277.5 562.5,277.5 C562.5,277.5 562.5,290.5 562.5,290.5 C567.7,290.5 570.3,297 575.5,297 C580.7,297 583.3,303.5 588.5,303.5 C593.7,303.5 596.3,310 601.5,310 C601.5,310 601.5,297 601.5,297 C611.9,297 617.1,297 627.5,297 C632.7,297 635.3,290.5 640.5,290.5 C645.7,290.5 648.3,284 653.5,284 C658.7,284 661.3,277.5 666.5,277.5 C676.9,277.5 682.1,277.5 692.5,277.5 C692.5,277.5 692.5,290.5 692.5,290.5 C702.9,290.5 708.1,290.5 718.5,290.5 C723.7,290.5 726.3,297 731.5,297 C736.7,297 739.3,303.5 744.5,303.5 C749.7,303.5 752.3,310 757.5,310 C762.7,310 765.3,316.5 770.5,316.5 C775.7,316.5 778.3,323 783.5,323 C788.7,323 791.3,329.5 796.5,329.5 C801.7,329.5 804.3,336 809.5,336 C809.5,336 809.5,349 809.5,349 C814.7,349 817.3,355.5 822.5,355.5 C822.5,355.5 822.5,368.5 822.5,368.5 C827.7,368.5 830.3,375 835.5,375 C840.7,375 843.3,381.5 848.5,381.5 C853.7,381.5 856.3,388 861.5,388 C866.7,388 869.3,394.5 874.5,394.5 C874.5,394.5 874.5,381.5 874.5,381.5 C879.7,381.5 882.3,375 887.5,375 C887.5,375 887.5,388 887.5,388 C892.7,388 895.3,381.5 900.5,381.5" fill="none" stroke="none"/>
 <g opacity="0.6">
         <animateMotion dur="24s" begin="6.25s" repeatCount="indefinite" rotate="auto">
           <mpath href="#dragonPath"/>
@@ -1086,10 +1108,10 @@
 <text x="680" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">最长连续 30 天 ∙ 当前 0 天</text>
 <line x1="680" y1="234" x2="920" y2="234" stroke="#ffd700" stroke-width="0.5" opacity="0.2"/>
 <text x="680" y="254" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#ffd700" font-weight="600">📊 每日贡献</text>
-<text x="680" y="274" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">单日最高 4 次 ∙ 日均 ~0.23 次</text>
+<text x="680" y="274" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">单日最高 4 次 ∙ 日均 ~0.24 次</text>
 <line x1="680" y1="288" x2="920" y2="288" stroke="#ffd700" stroke-width="0.5" opacity="0.2"/>
 <text x="680" y="310" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#ffd700" font-weight="600">🏮 年度总计</text>
-<text x="680" y="342" font-family="'Noto Serif SC', serif" font-size="30" fill="#ffd700" font-weight="700" filter="url(#glow)">83</text>
+<text x="680" y="342" font-family="'Noto Serif SC', serif" font-size="30" fill="#ffd700" font-weight="700" filter="url(#glow)">88</text>
 <text x="770" y="342" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">次贡献</text>
 <text x="680" y="372" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#d4a574" opacity="0.7">少</text>
 <rect x="696" y="363" width="12" height="12" rx="2" fill="#5a2020" stroke="#ffd700" stroke-width="0.3" stroke-opacity="0.3"/>
