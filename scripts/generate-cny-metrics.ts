@@ -416,6 +416,11 @@ function render(days: Day[], username: string, duration: Duration): string {
     <stop offset="0%" stop-color="#3d1515" stop-opacity="0.5"/>
     <stop offset="100%" stop-color="#2a0e0e" stop-opacity="0.3"/>
   </linearGradient>
+  <linearGradient id="shimmerGrad" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="white" stop-opacity="0"/>
+    <stop offset="50%" stop-color="white" stop-opacity="0.35"/>
+    <stop offset="100%" stop-color="white" stop-opacity="0"/>
+  </linearGradient>
   <filter id="glow">
     <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
     <feMerge>
@@ -423,6 +428,15 @@ function render(days: Day[], username: string, duration: Duration): string {
       <feMergeNode in="SourceGraphic"/>
     </feMerge>
   </filter>
+  <filter id="frostedGlass">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+    <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 12 -5" result="glass"/>
+    <feComposite in="SourceGraphic" in2="glass" operator="over"/>
+  </filter>
+  <pattern id="huiwen" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+    <rect width="24" height="24" fill="none"/>
+    <path d="M0,0 L8,0 L8,8 L16,8 L16,16 L24,16 L24,24 M0,24 L0,16 L8,16 L8,8 L16,8 L16,0 L24,0" stroke="#ffd700" stroke-width="0.6" fill="none" opacity="0.5"/>
+  </pattern>
   <style>
     .falling-petal {
       animation-name: petalFall;
@@ -450,11 +464,40 @@ function render(days: Day[], username: string, duration: Duration): string {
       50%  { opacity: 0.6; }
       100% { opacity: 0.2; }
     }
+    .golden-particle {
+      animation: floatUp ease-in-out infinite;
+    }
+    @keyframes floatUp {
+      0%   { opacity: 0; transform: translateY(0); }
+      20%  { opacity: 0.7; }
+      80%  { opacity: 0.5; }
+      100% { opacity: 0; transform: translateY(-40px); }
+    }
+    .breathe-pulse {
+      animation: breathe 3s ease-in-out infinite;
+    }
+    @keyframes breathe {
+      0%   { opacity: 0.85; filter: url(#glow); }
+      50%  { opacity: 1; filter: url(#glow) brightness(1.2); }
+      100% { opacity: 0.85; filter: url(#glow); }
+    }
   </style>
 </defs>`)
 
   // ── Background
   parts.push(`<rect width="100%" height="100%" fill="url(#bgGrad)"/>`)
+  // ── 回纹 texture overlay
+  parts.push(`<rect width="100%" height="100%" fill="url(#huiwen)" opacity="0.03"/>`)
+
+  // ── Floating golden particles
+  const particles = [
+    { x: 120, y: 380, dur: 7, delay: 0 }, { x: 300, y: 350, dur: 9, delay: 1.5 },
+    { x: 500, y: 400, dur: 8, delay: 3 }, { x: 700, y: 370, dur: 10, delay: 2 },
+    { x: 850, y: 390, dur: 7.5, delay: 4 }, { x: 200, y: 410, dur: 11, delay: 5 },
+  ]
+  for (const p of particles) {
+    parts.push(`<circle class="golden-particle" cx="${p.x}" cy="${p.y}" r="1.5" fill="#ffd700" style="animation-duration: ${p.dur}s; animation-delay: ${p.delay}s;"/>`)
+  }
 
   // ── Decorative border frame (animated glow)
   parts.push(`<rect class="border-glow" x="8" y="8" width="${width - 16}" height="${height - 16}" rx="12" fill="none" stroke="#ffd700" stroke-width="1.5" opacity="0.2"/>`)
@@ -552,238 +595,179 @@ function render(days: Day[], username: string, duration: Duration): string {
     </line>`)
   }
 
-  // ── Dragon Dance (舞龙) Animation ──────────────────────
-  // Build a path that winds through the grid AND climbs over contribution bars
+  // ── Voxel Horse (马年 – Year of the Horse 2026) ──────────────────────
   {
-    // Build a lookup for bar heights: key = "week,dow" → height
-    const barHeightMap = new Map<string, number>()
-    for (const d of days) {
-      if (d.count <= 0) continue
-      const dow = toDate(d.date).getUTCDay()
-      const week = totalWeeks - Math.floor(diffDays(d.date, gridStart) / 7)
-      const ratio = max > 0 ? d.count / max : 0
-      barHeightMap.set(`${week},${dow}`, ratio * maxBarH)
+    // A pixel-art horse built from isometric cubes, animated to gallop across the grid
+    const cw = 7  // cube half-width
+    const ch = 3.5  // cube half-height (isometric)
+
+    // Isometric cube renderer (relative to 0,0)
+    const cube = (x: number, y: number, h: number, face: string, shadow: string, top: string, str: string = '#8b5e3c', sw: number = 0.4) => {
+      const tp = `${x},${y - ch - h} ${x + cw},${y - h} ${x},${y + ch - h} ${x - cw},${y - h}`
+      const lf = `${x - cw},${y - h} ${x},${y + ch - h} ${x},${y + ch} ${x - cw},${y}`
+      const rf = `${x},${y + ch - h} ${x + cw},${y - h} ${x + cw},${y} ${x},${y + ch}`
+      return `<polygon points="${rf}" fill="${shadow}" stroke="${str}" stroke-width="${sw}"/>
+<polygon points="${lf}" fill="${face}" stroke="${str}" stroke-width="${sw}"/>
+<polygon points="${tp}" fill="${top}" stroke="${str}" stroke-width="${sw + 0.1}"/>`
     }
 
-    // Build waypoints: Random walk that prefers the "bar zone" (weeks 0-7)
-    // but occasionally wanders out.
-    const waypoints: { x: number; y: number }[] = []
+    // Horse color palette
+    const bodyFace = '#b5451b', bodyShadow = '#7a2e10', bodyTop = '#d4622a'
+    const maneFace = '#1a1010', maneShadow = '#0a0505', maneTop = '#2a1818'
+    const goldFace = '#d4a020', goldShadow = '#a07818', goldTop = '#f5d060'
+    const legFace = '#8b3a10', legShadow = '#5c2508', legTop = '#a04818'
 
-    // Start in the middle of the 'action' (bar zone) -> NO, User wants "Open Ground" below.
-    let currW = 20
-    let currD = 5
-    
-    // Add initial point
-    // Helper to get coords with height
-    const getPt = (w: number, d: number) => {
-      const cx = isoX(w, d)
-      const cy = isoY(w, d)
-      const h = barHeightMap.get(`${w},${d}`) ?? 0
-      return { x: cx, y: cy - h, w, d }
+    const step = cw * 2
+    const horseGroup: string[] = []
+
+    // All positions relative to origin (0,0) — the horse center
+    const ox = 0, oy = 0
+    const gallopDur = '0.5s'
+
+    // Leg animation: two phases (diagonal gait)
+    // Phase A: front-left + hind-right  |  Phase B: front-right + hind-left
+    const legUpA = `0,0;0,-4;0,0` // phase A timing
+    const legUpB = `0,-4;0,0;0,-4` // phase B (offset by half)
+
+    // Build legs as separate SVG snippets (not in horseGroup)
+    const hindLegLeft = cube(ox - step * 1.5 - step * 0.3, oy + ch * 3, 9, legFace, legShadow, legTop) +
+      cube(ox - step * 1.5 - step * 0.3, oy + ch * 3 + 2, 3, goldFace, goldShadow, goldTop, '#ffd700')
+    const hindLegRight = cube(ox - step * 1.5 + step * 0.3, oy + ch * 3, 9, legFace, legShadow, legTop) +
+      cube(ox - step * 1.5 + step * 0.3, oy + ch * 3 + 2, 3, goldFace, goldShadow, goldTop, '#ffd700')
+    const frontLegLeft = cube(ox + step * 1.8 - step * 0.3, oy + ch * 2.5, 11, legFace, legShadow, legTop) +
+      cube(ox + step * 1.8 - step * 0.3, oy + ch * 2.5 + 2, 3, goldFace, goldShadow, goldTop, '#ffd700')
+    const frontLegRight = cube(ox + step * 1.8 + step * 0.3, oy + ch * 2.5, 11, legFace, legShadow, legTop) +
+      cube(ox + step * 1.8 + step * 0.3, oy + ch * 2.5 + 2, 3, goldFace, goldShadow, goldTop, '#ffd700')
+
+    // Animated leg groups (diagonal gait: FL+HR together, FR+HL together)
+    const legsSvg = `
+      <g><animateTransform attributeName="transform" type="translate" values="${legUpA}" dur="${gallopDur}" repeatCount="indefinite"/>${frontLegLeft}${hindLegRight}</g>
+      <g><animateTransform attributeName="transform" type="translate" values="${legUpB}" dur="${gallopDur}" repeatCount="indefinite"/>${frontLegRight}${hindLegLeft}</g>`
+
+    // ── Barrel / torso ──
+    for (let bx = -2; bx <= 2; bx++) {
+      horseGroup.push(cube(ox + bx * step, oy, 14, bodyFace, bodyShadow, bodyTop))
+      horseGroup.push(cube(ox + bx * step, oy + ch, 10, bodyFace, bodyShadow, bodyTop))
     }
-    
-    waypoints.push(getPt(currW, currD))
-
-    const recentHistory: string[] = []
-    
-    // Dragon length INCREASED to ~55 segments.
-    // Need a history buffer larger than that (in steps) to avoid running into own tail.
-    // 5.5s length / 24s total * 80 steps ~= 18 steps.
-    // 32 is a safe buffer.
-    const historyLen = 32
-    
-    // Number of steps for the dragon path
-    const steps = 80
-
-    // Track previous move for momentum
-    let lastDw = 0
-    let lastDd = 0
-
-    for (let i = 0; i < steps; i++) {
-        // Potential moves: up, down, left, right (in grid coords)
-        const moves = [
-            { dw: 1, dd: 0 }, { dw: -1, dd: 0 },
-            { dw: 0, dd: 1 }, { dw: 0, dd: -1 },
-            { dw: 1, dd: 1 }, { dw: 1, dd: -1 },
-            { dw: -1, dd: 1 }, { dw: -1, dd: -1 }
-        ]
-
-        const candidates: { w: number, d: number, score: number, move: {dw:number, dd:number} }[] = []
-        
-        for (const m of moves) {
-            const nw = currW + m.dw
-            const nd = currD + m.dd
-            
-            // Bounds check
-            if (nw < 0 || nw >= totalWeeks || nd < 0 || nd > 6) continue
-
-            // 1. Base Score
-            let score = Math.random() * 5 
-
-            const isFlat = !barHeightMap.has(`${nw},${nd}`);
-            const wasFlat = !barHeightMap.has(`${currW},${currD}`);
-
-            // 2. Bar Attraction (minimal)
-            if (nw <= 8) score += 2 
-            if (nw <= 4) score += 1 
-            
-            if (barHeightMap.has(`${nw},${nd}`)) score += 15
-
-            // 3. Collision Avoidance (Strict)
-            if (recentHistory.includes(`${nw},${nd}`)) score -= 1000
-
-            // 4. Momentum / Flow (HIGHWAY MODE)
-            if (m.dw === lastDw && m.dd === lastDd) {
-                score += 50; 
-                if (isFlat && wasFlat) score += 30; 
-            }
-            else if (m.dw === lastDw || m.dd === lastDd) {
-                score += 5;
-            }
-
-            // 5. NO BACKWARD MOVEMENT (Fix Inverted Head)
-            if ((m.dw - m.dd) < 0) {
-                score -= 5000; 
-            }
-
-            candidates.push({ w: nw, d: nd, score, move: m })
-        }
-
-        // Sort by score
-        candidates.sort((a, b) => b.score - a.score)
-        
-        // Pick one of the top valid candidates
-        const valid = candidates.filter(c => c.score > -500)
-        
-        if (valid.length > 0) {
-            const topK = valid.slice(0, 3)
-            const choice = topK[Math.floor(Math.random() * topK.length)]
-            
-            currW = choice.w
-            currD = choice.d
-            lastDw = choice.move.dw
-            lastDd = choice.move.dd
-            
-            const key = `${currW},${currD}`
-            recentHistory.push(key)
-            if (recentHistory.length > historyLen) recentHistory.shift()
-
-            waypoints.push(getPt(currW, currD))
-        } else {
-            break
-        }
+    for (let bx = -1; bx <= 1; bx++) {
+      horseGroup.push(cube(ox + bx * step + cw, oy - ch * 0.5, 12, dim(bodyFace, 0.2), dim(bodyShadow, 0.2), dim(bodyTop, 0.2)))
     }
 
-    // Ensure we have enough points for a smooth spline
-    // (The cubic bezier loop below handles it)
+    // ── Rump ──
+    horseGroup.push(cube(ox - step * 2.2, oy - ch * 0.5, 12, bodyFace, bodyShadow, bodyTop))
 
-    if (waypoints.length >= 4) {
-      // Build a smooth SVG path with cubic bezier curves
-      let pathD = `M${waypoints[0].x},${waypoints[0].y}`
-      for (let i = 1; i < waypoints.length; i++) {
-        const curr = waypoints[i]
-        const prev = waypoints[i - 1]
-        // Use smooth curves between waypoints
-        const cpx1 = prev.x + (curr.x - prev.x) * 0.4
-        const cpy1 = prev.y
-        const cpx2 = prev.x + (curr.x - prev.x) * 0.6
-        const cpy2 = curr.y
-        pathD += ` C${cpx1},${cpy1} ${cpx2},${cpy2} ${curr.x},${curr.y}`
-      }
+    // ── Tail ──
+    for (let ti = 0; ti < 4; ti++) {
+      horseGroup.push(cube(ox - step * 2.8 - ti * 3, oy - ch * 0.5 + ti * ch * 1.2 + ti * 2, 5 - ti, maneFace, maneShadow, maneTop))
+    }
+    horseGroup.push(cube(ox - step * 2.8 - 2, oy + ch * 0.5, 3, goldFace, goldShadow, goldTop, '#ffd700'))
 
-      const dragonPathId = "dragonPath"
-      parts.push(`<path id="${dragonPathId}" d="${pathD}" fill="none" stroke="none"/>`)
+    // ── Neck ──
+    const nx = ox + step * 2.5
+    horseGroup.push(cube(nx, oy - ch * 2, 16, bodyFace, bodyShadow, bodyTop))
+    horseGroup.push(cube(nx + step * 0.4, oy - ch * 3.5, 14, bodyFace, bodyShadow, bodyTop))
+    horseGroup.push(cube(nx + step * 0.3, oy - ch * 1, 14, bodyFace, bodyShadow, bodyTop))
 
-      const animDur = "24s"
-      const segCount = 24
-      const segDelay = 0.25
+    // ── Mane ──
+    for (let mi = 0; mi < 4; mi++) {
+      horseGroup.push(cube(nx + mi * 2 - 1, oy - ch * (3.5 + mi * 0.4), 4 + mi, maneFace, maneShadow, maneTop, '#1a0808'))
+    }
 
-      // ─ Dragon tail – tapered fin
-      const tailDelay = `${(segCount + 1) * segDelay}s`
-      parts.push(`<g opacity="0.6">
-        <animateMotion dur="${animDur}" begin="${tailDelay}" repeatCount="indefinite" rotate="auto">
-          <mpath href="#${dragonPathId}"/>
+    // ── Head ──
+    const hdx = nx + step * 0.8, hdy = oy - ch * 5
+    horseGroup.push(cube(hdx, hdy, 12, bodyFace, bodyShadow, bodyTop))
+    horseGroup.push(cube(hdx + step * 0.6, hdy + ch * 0.8, 9, highlight(bodyFace, 0.15), bodyFace, highlight(bodyTop, 0.1)))
+    horseGroup.push(cube(hdx + step * 0.3, hdy + ch * 1.8, 5, bodyFace, bodyShadow, bodyTop))
+    // Ears
+    horseGroup.push(cube(hdx - cw * 0.3, hdy - ch * 1.5, 5, bodyFace, bodyShadow, bodyTop))
+    horseGroup.push(cube(hdx + cw * 0.5, hdy - ch * 1.5, 5, bodyFace, bodyShadow, bodyTop))
+    // Eye
+    const ex = hdx + cw * 0.6, ey = hdy - 7
+    horseGroup.push(`<ellipse cx="${ex}" cy="${ey}" rx="2.5" ry="2" fill="#fff" opacity="0.95"/>`)
+    horseGroup.push(`<circle cx="${ex}" cy="${ey}" r="1.5" fill="#1a0505"/>`)
+    horseGroup.push(`<circle cx="${ex + 0.4}" cy="${ey - 0.4}" r="0.5" fill="#fff" opacity="0.8"/>`)
+    // Nostril
+    horseGroup.push(`<circle cx="${hdx + step * 0.9}" cy="${hdy + ch * 0.5}" r="1.2" fill="#5a2010" opacity="0.7"/>`)
+    // Bridle
+    horseGroup.push(`<line x1="${hdx - cw}" y1="${hdy - 2}" x2="${hdx + step}" y2="${hdy + ch}" stroke="#ffd700" stroke-width="1" opacity="0.6" stroke-linecap="round"/>`)
+    horseGroup.push(`<circle cx="${hdx + cw * 0.3}" cy="${hdy + ch * 0.5}" r="1.5" fill="#ffd700" opacity="0.5"/>`)
+
+    // ── Saddle ──
+    horseGroup.push(cube(ox + step * 0.5, oy - 14, 4, '#c0392b', '#8b1a12', '#e74c3c', '#ffd700', 0.5))
+    horseGroup.push(cube(ox, oy - 13, 3, goldFace, goldShadow, goldTop, '#ffd700', 0.4))
+    horseGroup.push(cube(ox + step, oy - 13, 3, goldFace, goldShadow, goldTop, '#ffd700', 0.4))
+
+    // ── Red tassel ──
+    horseGroup.push(`<line x1="${ox}" y1="${oy - 9}" x2="${ox}" y2="${oy - 1}" stroke="#c0392b" stroke-width="1.2" opacity="0.6"/>`)
+    horseGroup.push(`<circle cx="${ox}" cy="${oy}" r="1.5" fill="#c0392b" opacity="0.5"/>`)
+
+    // Combine: legs (animated) behind body (static)
+    const horseSvg = legsSvg + '\n' + horseGroup.join('\n')
+
+    // ── Animation path – galloping from top-left to bottom-right across the grid ──
+    // Horse faces right (+x), so path must go left→right to avoid backwards motion
+    const pA = { x: isoX(2, 0), y: isoY(2, 0) }                                        // top-left start
+    const pB = { x: isoX(Math.floor(totalWeeks * 0.4), 2), y: isoY(Math.floor(totalWeeks * 0.4), 2) + 5 }
+    const pC = { x: isoX(Math.floor(totalWeeks * 0.7), 4), y: isoY(Math.floor(totalWeeks * 0.7), 4) + 10 }
+    const pD = { x: isoX(totalWeeks - 2, 6), y: isoY(totalWeeks - 2, 6) + 15 }          // bottom-right end
+    // Return path (loop back above/below the grid, out of view)
+    const pE = { x: isoX(totalWeeks - 2, 6) + 40, y: isoY(totalWeeks - 2, 6) + 60 }
+    const pF = { x: isoX(2, 6) + 40, y: isoY(2, 6) + 80 }
+
+    const horsePath = `M${pA.x},${pA.y} C${pA.x + 40},${pA.y + 10} ${pB.x - 50},${pB.y - 15} ${pB.x},${pB.y} C${pB.x + 60},${pB.y + 15} ${pC.x - 60},${pC.y - 20} ${pC.x},${pC.y} C${pC.x + 60},${pC.y + 20} ${pD.x - 60},${pD.y - 30} ${pD.x},${pD.y} C${pD.x + 30},${pD.y + 20} ${pE.x + 20},${pE.y - 20} ${pE.x},${pE.y} L${pF.x},${pF.y} C${pF.x - 30},${pF.y - 20} ${pA.x - 30},${pA.y + 30} ${pA.x},${pA.y}`
+
+    const horsePathId = 'horseRunPath'
+    const animDur = '18s'
+    parts.push(`<path id="${horsePathId}" d="${horsePath}" fill="none" stroke="none"/>`)
+
+    // Horse group with motion path + body bounce
+    parts.push(`<g opacity="0.92">
+      <animateMotion dur="${animDur}" repeatCount="indefinite" rotate="auto">
+        <mpath href="#${horsePathId}"/>
+      </animateMotion>
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0,0;0,-2;0,0;0,-2;0,0" dur="${gallopDur}" repeatCount="indefinite"/>
+        ${horseSvg}
+      </g>
+    </g>`)
+
+    // Dust trail – small particles that follow behind with delay
+    for (let di = 0; di < 4; di++) {
+      const dDelay = `${(di + 1) * 0.3}s`
+      const dOp = 0.3 - di * 0.06
+      const dSize = 2.5 - di * 0.4
+      parts.push(`<g opacity="${dOp}">
+        <animateMotion dur="${animDur}" begin="${dDelay}" repeatCount="indefinite">
+          <mpath href="#${horsePathId}"/>
         </animateMotion>
-        <path d="M-2,0 L-10,-4 Q-14,0 -10,4 Z" fill="#c0392b" stroke="#ffd700" stroke-width="0.5"/>
-        <path d="M-6,0 L-16,-2.5 Q-18,0 -16,2.5 Z" fill="#e74c3c" stroke="#ffd700" stroke-width="0.3" opacity="0.5"/>
-      </g>`)
-
-      // ─ Dragon body segments – alternating red/gold with spine crests
-      for (let i = 0; i < segCount; i++) {
-        const beginDelay = `${(i + 1) * segDelay}s`
-        const isGold = i % 3 === 1  // pattern: red, gold, red, gold...
-        const segColor = isGold ? "#f5c842" : "#c0392b"
-        const segStroke = isGold ? "#d4a020" : "#ffd700"
-        // Taper: larger at front, smaller toward tail
-        const t = i / segCount
-        const rx = 6 - t * 2.5
-        const ry = 4.5 - t * 1.5
-        const opacity = 0.88 - t * 0.3
-
-        parts.push(`<g opacity="${opacity}">
-          <animateMotion dur="${animDur}" begin="${beginDelay}" repeatCount="indefinite" rotate="auto">
-            <mpath href="#${dragonPathId}"/>
-          </animateMotion>
-          <ellipse cx="0" cy="0" rx="${rx.toFixed(1)}" ry="${ry.toFixed(1)}" fill="${segColor}" stroke="${segStroke}" stroke-width="0.6"/>
-          <ellipse cx="0" cy="${(-ry * 0.85).toFixed(1)}" rx="${(rx * 0.35).toFixed(1)}" ry="${(ry * 0.3).toFixed(1)}" fill="${isGold ? '#e8823a' : '#ffd700'}" opacity="0.45"/>
-        </g>`)
-      }
-
-      // ─ Dragon Head – detailed Chinese dragon face (v2 design)
-      parts.push(`<g opacity="0.9">
-        <animateMotion dur="${animDur}" repeatCount="indefinite" rotate="auto">
-          <mpath href="#${dragonPathId}"/>
-        </animateMotion>
-        <!-- Main head shape – wide, rectangular face -->
-        <rect x="-10" y="-8" width="20" height="16" rx="4" fill="#c0392b" stroke="#ffd700" stroke-width="1"/>
-        <!-- Forehead crest -->
-        <path d="M-6,-8 Q0,-14 6,-8" fill="#e74c3c" stroke="#ffd700" stroke-width="0.8"/>
-        <!-- Left deer-antler horn -->
-        <path d="M-5,-8 L-7,-16 L-9,-13 M-7,-16 L-5,-19" stroke="#ffd700" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-        <!-- Right deer-antler horn -->
-        <path d="M5,-8 L7,-16 L9,-13 M7,-16 L5,-19" stroke="#ffd700" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-        <!-- Left eye – large and expressive -->
-        <ellipse cx="-4" cy="-2" rx="2.5" ry="2" fill="#fff" opacity="0.9"/>
-        <circle cx="-4" cy="-2" r="1.3" fill="#ffd700"/>
-        <circle cx="-4.3" cy="-2.2" r="0.6" fill="#1a0505"/>
-        <!-- Right eye -->
-        <ellipse cx="4" cy="-2" rx="2.5" ry="2" fill="#fff" opacity="0.9"/>
-        <circle cx="4" cy="-2" r="1.3" fill="#ffd700"/>
-        <circle cx="3.7" cy="-2.2" r="0.6" fill="#1a0505"/>
-        <!-- Nose -->
-        <ellipse cx="0" cy="1" rx="3" ry="1.5" fill="#e74c3c" stroke="#ffd700" stroke-width="0.5"/>
-        <circle cx="-1.2" cy="0.8" r="0.6" fill="#8b1a12"/>
-        <circle cx="1.2" cy="0.8" r="0.6" fill="#8b1a12"/>
-        <!-- Open mouth with fangs -->
-        <path d="M-6,4 Q0,10 6,4" fill="#8b1a12" stroke="#ffd700" stroke-width="0.6"/>
-        <line x1="-3" y1="4.5" x2="-2.5" y2="6.5" stroke="#fff" stroke-width="0.8" stroke-linecap="round"/>
-        <line x1="3" y1="4.5" x2="2.5" y2="6.5" stroke="#fff" stroke-width="0.8" stroke-linecap="round"/>
-        <!-- Beard / tendrils -->
-        <path d="M-8,2 Q-14,5 -12,10" stroke="#ffd700" stroke-width="0.8" fill="none" opacity="0.7"/>
-        <path d="M-7,4 Q-12,8 -10,13" stroke="#ffd700" stroke-width="0.6" fill="none" opacity="0.5"/>
-        <path d="M8,2 Q14,5 12,10" stroke="#ffd700" stroke-width="0.8" fill="none" opacity="0.7"/>
-        <path d="M7,4 Q12,8 10,13" stroke="#ffd700" stroke-width="0.6" fill="none" opacity="0.5"/>
-        <!-- Mane tufts -->
-        <circle cx="-9" cy="-4" r="2.5" fill="#e8823a" opacity="0.6"/>
-        <circle cx="9" cy="-4" r="2.5" fill="#e8823a" opacity="0.6"/>
-        <circle cx="-10" cy="0" r="2" fill="#e8823a" opacity="0.5"/>
-        <circle cx="10" cy="0" r="2" fill="#e8823a" opacity="0.5"/>
+        <circle cx="${-20 - di * 8}" cy="${10 + di * 3}" r="${dSize}" fill="#f5c842">
+          <animate attributeName="opacity" values="${dOp};${dOp * 0.3};${dOp}" dur="1s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="${-25 - di * 6}" cy="${5 + di * 2}" r="${dSize * 0.7}" fill="#e8823a" opacity="0.5">
+          <animate attributeName="r" values="${dSize * 0.5};${dSize};${dSize * 0.5}" dur="1.2s" repeatCount="indefinite"/>
+        </circle>
       </g>`)
     }
   }
 
-  // ── Stats panel (compact, bottom-right)
+  // ── Stats panel (compact, bottom-right) – frosted glass style
   const px = 680
   const py = 200
 
-  // Panel background (smaller)
-  parts.push(`<rect x="${px - 14}" y="${py - 28}" width="280" height="220" rx="10" fill="#3a1212" opacity="0.55" stroke="#f5c842" stroke-width="0.5" stroke-opacity="0.25"/>`)
+  // Panel background – frosted glass with subtle inner border
+  parts.push(`<rect x="${px - 14}" y="${py - 28}" width="280" height="230" rx="12" fill="#3a1212" opacity="0.65" filter="url(#frostedGlass)" stroke="#f5c842" stroke-width="0.8" stroke-opacity="0.3"/>`)
+  // Inner subtle border
+  parts.push(`<rect x="${px - 8}" y="${py - 22}" width="268" height="218" rx="8" fill="none" stroke="#ffd700" stroke-width="0.3" opacity="0.15"/>`)
+  // Corner ornaments (小回纹角花)
+  for (const [cx, cy] of [[px - 6, py - 20], [px + 252, py - 20], [px - 6, py + 188], [px + 252, py + 188]]) {
+    parts.push(`<path d="M${cx},${cy} l8,0 l0,8 M${cx},${cy} l0,8 l8,0" stroke="#ffd700" stroke-width="0.6" fill="none" opacity="0.35"/>`)
+  }
 
   // Commits streaks
   parts.push(`<text x="${px}" y="${py}" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#ffd700" font-weight="600">🔥 连续贡献</text>`)
   parts.push(`<text x="${px}" y="${py + 20}" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">最长连续 ${s.best} 天 ∙ 当前 ${s.current} 天</text>`)
 
-  // Divider
+  // Divider – gradient fade
   parts.push(`<line x1="${px}" y1="${py + 34}" x2="${px + 240}" y2="${py + 34}" stroke="#ffd700" stroke-width="0.5" opacity="0.2"/>`)
 
   // Commits per day
@@ -793,14 +777,14 @@ function render(days: Day[], username: string, duration: Duration): string {
   // Divider
   parts.push(`<line x1="${px}" y1="${py + 88}" x2="${px + 240}" y2="${py + 88}" stroke="#ffd700" stroke-width="0.5" opacity="0.2"/>`)
 
-  // Total
+  // Total – breathing pulse on number
   parts.push(`<text x="${px}" y="${py + 110}" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#ffd700" font-weight="600">🏮 年度总计</text>`)
-  parts.push(`<text x="${px}" y="${py + 142}" font-family="'Noto Serif SC', serif" font-size="30" fill="#ffd700" font-weight="700" filter="url(#glow)">${s.total}</text>`)
-  parts.push(`<text x="${px + 90}" y="${py + 142}" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">次贡献</text>`)
+  parts.push(`<text class="breathe-pulse" x="${px}" y="${py + 145}" font-family="'Noto Serif SC', serif" font-size="32" fill="#ffd700" font-weight="700" filter="url(#glow)">${s.total}</text>`)
+  parts.push(`<text x="${px + 90}" y="${py + 145}" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">次贡献</text>`)
 
   // ── Color legend
   const lx = px
-  const ly = py + 172
+  const ly = py + 178
   parts.push(`<text x="${lx}" y="${ly}" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#d4a574" opacity="0.7">少</text>`)
   const legendColors = ["#5a2020", "#b82e2e", "#d94040", "#e8823a", "#f5c842"]
   for (let li = 0; li < legendColors.length; li++) {
@@ -808,12 +792,27 @@ function render(days: Day[], username: string, duration: Duration): string {
   }
   parts.push(`<text x="${lx + 16 + legendColors.length * 16 + 5}" y="${ly}" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#d4a574" opacity="0.7">多</text>`)
 
+  // ── Month labels along grid edge
+  {
+    const startDate = toDate(gridStart)
+    const startMonth = startDate.getUTCMonth()
+    for (let m = 0; m < 12; m++) {
+      const monthIdx = (startMonth + m) % 12
+      const monthNames = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+      // Approximate week offset for this month
+      const weekOffset = Math.floor(m * (totalWeeks / 12))
+      const mx = isoX(totalWeeks - weekOffset, -1)
+      const my = isoY(totalWeeks - weekOffset, -1) - 4
+      parts.push(`<text x="${mx}" y="${my}" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">${monthNames[monthIdx]}</text>`)
+    }
+  }
+
   // ── Decorative plum blossoms (near the grid)
   parts.push(svgPlumBranch(340, 100, 0.7))
   parts.push(svgPlumBranch(460, 90, 0.5, true))
 
-  // ── Bottom decorative text
-  parts.push(`<text x="${width / 2}" y="${height - 16}" font-family="'Noto Serif SC', serif" font-size="12" fill="#ffd700" text-anchor="middle" opacity="0.3">新春快乐 · 万事如意 · ${new Date().getFullYear()}</text>`)
+  // ── Bottom festive banner (replaces plain text)
+  parts.push(svgFestiveBanner(width / 2, height - 22, `新春快乐 · 万事如意 · ${new Date().getFullYear()}`, 0.55))
 
   // ── Subtle clouds at bottom
   parts.push(svgCloud(80, height - 30, 0.4, 0.04))
