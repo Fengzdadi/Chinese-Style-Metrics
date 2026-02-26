@@ -596,6 +596,7 @@
 <polygon points="224.5,50 237.5,56.5 224.5,63 211.5,56.5" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="211.5,56.5 224.5,63 211.5,69.5 198.5,63" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="198.5,63 211.5,69.5 198.5,76 185.5,69.5" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
+<polygon points="185.5,69.5 198.5,76 185.5,82.5 172.5,76" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="211.5,59.5 224.5,53 224.5,63 211.5,69.5" fill="#4a1212" stroke="#2e0c0c" stroke-width="0.3"/>
 <polygon points="198.5,53 211.5,59.5 211.5,69.5 198.5,63" fill="#812020" stroke="#5c1717" stroke-width="0.3"/>
 <line x1="198.5" y1="53" x2="211.5" y2="59.5" stroke="#d88c8c" stroke-width="0.8" opacity="0.5"/>
