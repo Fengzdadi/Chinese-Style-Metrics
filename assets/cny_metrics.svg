@@ -597,6 +597,7 @@
 <polygon points="211.5,56.5 224.5,63 211.5,69.5 198.5,63" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="198.5,63 211.5,69.5 198.5,76 185.5,69.5" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="185.5,69.5 198.5,76 185.5,82.5 172.5,76" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
+<polygon points="172.5,76 185.5,82.5 172.5,89 159.5,82.5" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="237.5,64.5 250.5,58 250.5,63 237.5,69.5" fill="#571a1a" stroke="#361010" stroke-width="0.3"/>
 <polygon points="224.5,58 237.5,64.5 237.5,69.5 224.5,63" fill="#982d2d" stroke="#6d2020" stroke-width="0.3"/>
 <line x1="224.5" y1="58" x2="237.5" y2="64.5" stroke="#ea9696" stroke-width="0.8" opacity="0.5"/>
@@ -1265,7 +1266,7 @@
 <text x="680" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">最长连续 30 天 ∙ 当前 0 天</text>
 <line x1="680" y1="234" x2="920" y2="234" stroke="#ffd700" stroke-width="0.5" opacity="0.2"/>
 <text x="680" y="254" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#ffd700" font-weight="600">📊 每日贡献</text>
-<text x="680" y="274" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">单日最高 16 次 ∙ 日均 ~0.43 次</text>
+<text x="680" y="274" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">单日最高 16 次 ∙ 日均 ~0.42 次</text>
 <line x1="680" y1="288" x2="920" y2="288" stroke="#ffd700" stroke-width="0.5" opacity="0.2"/>
 <text x="680" y="310" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#ffd700" font-weight="600">🏮 年度总计</text>
 <text class="breathe-pulse" x="680" y="345" font-family="'Noto Serif SC', serif" font-size="32" fill="#ffd700" font-weight="700" filter="url(#glow)">157</text>
