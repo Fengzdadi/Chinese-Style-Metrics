@@ -595,6 +595,14 @@
 <polygon points="237.5,43.5 250.5,50 237.5,56.5 224.5,50" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="224.5,50 237.5,56.5 224.5,63 211.5,56.5" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="211.5,56.5 224.5,63 211.5,69.5 198.5,63" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
+<polygon points="198.5,63 211.5,69.5 198.5,76 185.5,69.5" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
+<polygon points="211.5,67 224.5,60.5 224.5,63 211.5,69.5" fill="#4a1212" stroke="#2e0c0c" stroke-width="0.3"/>
+<polygon points="198.5,60.5 211.5,67 211.5,69.5 198.5,63" fill="#812020" stroke="#5c1717" stroke-width="0.3"/>
+<line x1="198.5" y1="60.5" x2="211.5" y2="67" stroke="#d88c8c" stroke-width="0.8" opacity="0.5"/>
+<polygon points="211.5,54 224.5,60.5 211.5,67 198.5,60.5" fill="#ca6262" stroke="#d88c8c" stroke-width="0.5"/>
+<line x1="205" y1="57.25" x2="218" y2="57.25" stroke="white" stroke-width="0.6">
+      <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="0.16s" repeatCount="indefinite"/>
+    </line>
 <polygon points="250.5,53 263.5,46.5 263.5,56.5 250.5,63" fill="#5d3417" stroke="#3a210f" stroke-width="0.3"/>
 <polygon points="237.5,46.5 250.5,53 250.5,63 237.5,56.5" fill="#a25b29" stroke="#74411d" stroke-width="0.3"/>
 <line x1="237.5" y1="46.5" x2="250.5" y2="53" stroke="#f2ba93" stroke-width="0.8" opacity="0.5"/>
@@ -1301,7 +1309,7 @@
 <text x="680" y="274" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">单日最高 16 次 ∙ 日均 ~0.47 次</text>
 <line x1="680" y1="288" x2="920" y2="288" stroke="#ffd700" stroke-width="0.5" opacity="0.2"/>
 <text x="680" y="310" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#ffd700" font-weight="600">🏮 年度总计</text>
-<text class="breathe-pulse" x="680" y="345" font-family="'Noto Serif SC', serif" font-size="32" fill="#ffd700" font-weight="700" filter="url(#glow)">173</text>
+<text class="breathe-pulse" x="680" y="345" font-family="'Noto Serif SC', serif" font-size="32" fill="#ffd700" font-weight="700" filter="url(#glow)">174</text>
 <text x="770" y="345" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">次贡献</text>
 <text x="680" y="378" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#d4a574" opacity="0.7">少</text>
 <rect x="696" y="369" width="12" height="12" rx="2" fill="#5a2020" stroke="#ffd700" stroke-width="0.3" stroke-opacity="0.3"/>
