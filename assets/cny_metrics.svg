@@ -597,6 +597,7 @@
 <polygon points="211.5,56.5 224.5,63 211.5,69.5 198.5,63" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="198.5,63 211.5,69.5 198.5,76 185.5,69.5" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="185.5,69.5 198.5,76 185.5,82.5 172.5,76" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
+<polygon points="172.5,76 185.5,82.5 172.5,89 159.5,82.5" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="224.5,61.857142857142854 237.5,55.357142857142854 237.5,56.5 224.5,63" fill="#4a1212" stroke="#2e0c0c" stroke-width="0.3"/>
 <polygon points="211.5,55.357142857142854 224.5,61.857142857142854 224.5,63 211.5,56.5" fill="#812020" stroke="#5c1717" stroke-width="0.3"/>
 <line x1="211.5" y1="55.357142857142854" x2="224.5" y2="61.857142857142854" stroke="#d88c8c" stroke-width="0.8" opacity="0.5"/>
@@ -618,11 +619,11 @@
 <line x1="192" y1="62.82142857142857" x2="205" y2="62.82142857142857" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="0.24s" repeatCount="indefinite"/>
     </line>
-<polygon points="185.5,81.35714285714286 198.5,74.85714285714286 198.5,76 185.5,82.5" fill="#4a1212" stroke="#2e0c0c" stroke-width="0.3"/>
-<polygon points="172.5,74.85714285714286 185.5,81.35714285714286 185.5,82.5 172.5,76" fill="#812020" stroke="#5c1717" stroke-width="0.3"/>
-<line x1="172.5" y1="74.85714285714286" x2="185.5" y2="81.35714285714286" stroke="#d88c8c" stroke-width="0.8" opacity="0.5"/>
-<polygon points="185.5,68.35714285714286 198.5,74.85714285714286 185.5,81.35714285714286 172.5,74.85714285714286" fill="#ca6262" stroke="#d88c8c" stroke-width="0.5"/>
-<line x1="179" y1="71.60714285714286" x2="192" y2="71.60714285714286" stroke="white" stroke-width="0.6">
+<polygon points="185.5,77.92857142857143 198.5,71.42857142857143 198.5,76 185.5,82.5" fill="#5d3417" stroke="#3a210f" stroke-width="0.3"/>
+<polygon points="172.5,71.42857142857143 185.5,77.92857142857143 185.5,82.5 172.5,76" fill="#a25b29" stroke="#74411d" stroke-width="0.3"/>
+<line x1="172.5" y1="71.42857142857143" x2="185.5" y2="77.92857142857143" stroke="#f2ba93" stroke-width="0.8" opacity="0.5"/>
+<polygon points="185.5,64.92857142857143 198.5,71.42857142857143 185.5,77.92857142857143 172.5,71.42857142857143" fill="#eea16b" stroke="#f2ba93" stroke-width="0.5"/>
+<line x1="179" y1="68.17857142857143" x2="192" y2="68.17857142857143" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="0.32s" repeatCount="indefinite"/>
     </line>
 <polygon points="250.5,60.714285714285715 263.5,54.214285714285715 263.5,56.5 250.5,63" fill="#571a1a" stroke="#361010" stroke-width="0.3"/>
@@ -1654,13 +1655,13 @@
 <path d="M674,388 l8,0 l0,8 M674,388 l0,8 l8,0" stroke="#ffd700" stroke-width="0.6" fill="none" opacity="0.35"/>
 <path d="M932,388 l8,0 l0,8 M932,388 l0,8 l8,0" stroke="#ffd700" stroke-width="0.6" fill="none" opacity="0.35"/>
 <text x="680" y="200" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#ffd700" font-weight="600">🔥 连续贡献</text>
-<text x="680" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">最长连续 30 天 ∙ 当前 4 天</text>
+<text x="680" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">最长连续 30 天 ∙ 当前 0 天</text>
 <line x1="680" y1="234" x2="920" y2="234" stroke="#ffd700" stroke-width="0.5" opacity="0.2"/>
 <text x="680" y="254" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#ffd700" font-weight="600">📊 每日贡献</text>
-<text x="680" y="274" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">单日最高 35 次 ∙ 日均 ~0.92 次</text>
+<text x="680" y="274" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">单日最高 35 次 ∙ 日均 ~0.93 次</text>
 <line x1="680" y1="288" x2="920" y2="288" stroke="#ffd700" stroke-width="0.5" opacity="0.2"/>
 <text x="680" y="310" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#ffd700" font-weight="600">🏮 年度总计</text>
-<text class="breathe-pulse" x="680" y="345" font-family="'Noto Serif SC', serif" font-size="32" fill="#ffd700" font-weight="700" filter="url(#glow)">341</text>
+<text class="breathe-pulse" x="680" y="345" font-family="'Noto Serif SC', serif" font-size="32" fill="#ffd700" font-weight="700" filter="url(#glow)">344</text>
 <text x="770" y="345" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">次贡献</text>
 <text x="680" y="378" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#d4a574" opacity="0.7">少</text>
 <rect x="696" y="369" width="12" height="12" rx="2" fill="#5a2020" stroke="#ffd700" stroke-width="0.3" stroke-opacity="0.3"/>
