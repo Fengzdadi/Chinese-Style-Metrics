@@ -597,12 +597,20 @@
 <polygon points="211.5,56.5 224.5,63 211.5,69.5 198.5,63" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="198.5,63 211.5,69.5 198.5,76 185.5,69.5" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="185.5,69.5 198.5,76 185.5,82.5 172.5,76" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
+<polygon points="172.5,76 185.5,82.5 172.5,89 159.5,82.5" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="237.5,54.214285714285715 250.5,47.714285714285715 250.5,50 237.5,56.5" fill="#571a1a" stroke="#361010" stroke-width="0.3"/>
 <polygon points="224.5,47.714285714285715 237.5,54.214285714285715 237.5,56.5 224.5,50" fill="#982d2d" stroke="#6d2020" stroke-width="0.3"/>
 <line x1="224.5" y1="47.714285714285715" x2="237.5" y2="54.214285714285715" stroke="#ea9696" stroke-width="0.8" opacity="0.5"/>
 <polygon points="237.5,41.214285714285715 250.5,47.714285714285715 237.5,54.214285714285715 224.5,47.714285714285715" fill="#e37070" stroke="#ea9696" stroke-width="0.5"/>
 <line x1="231" y1="44.464285714285715" x2="244" y2="44.464285714285715" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="0s" repeatCount="indefinite"/>
+    </line>
+<polygon points="185.5,81.35714285714286 198.5,74.85714285714286 198.5,76 185.5,82.5" fill="#4a1212" stroke="#2e0c0c" stroke-width="0.3"/>
+<polygon points="172.5,74.85714285714286 185.5,81.35714285714286 185.5,82.5 172.5,76" fill="#812020" stroke="#5c1717" stroke-width="0.3"/>
+<line x1="172.5" y1="74.85714285714286" x2="185.5" y2="81.35714285714286" stroke="#d88c8c" stroke-width="0.8" opacity="0.5"/>
+<polygon points="185.5,68.35714285714286 198.5,74.85714285714286 185.5,81.35714285714286 172.5,74.85714285714286" fill="#ca6262" stroke="#d88c8c" stroke-width="0.5"/>
+<line x1="179" y1="71.60714285714286" x2="192" y2="71.60714285714286" stroke="white" stroke-width="0.6">
+      <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="0.32s" repeatCount="indefinite"/>
     </line>
 <polygon points="237.5,68.35714285714286 250.5,61.857142857142854 250.5,63 237.5,69.5" fill="#4a1212" stroke="#2e0c0c" stroke-width="0.3"/>
 <polygon points="224.5,61.857142857142854 237.5,68.35714285714286 237.5,69.5 224.5,63" fill="#812020" stroke="#5c1717" stroke-width="0.3"/>
@@ -765,10 +773,10 @@
 <line x1="296" y1="78.10714285714286" x2="309" y2="78.10714285714286" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="2.8000000000000003s" repeatCount="indefinite"/>
     </line>
-<polygon points="289.5,89.78571428571429 302.5,83.28571428571429 302.5,89 289.5,95.5" fill="#5d3417" stroke="#3a210f" stroke-width="0.3"/>
-<polygon points="276.5,83.28571428571429 289.5,89.78571428571429 289.5,95.5 276.5,89" fill="#a25b29" stroke="#74411d" stroke-width="0.3"/>
-<line x1="276.5" y1="83.28571428571429" x2="289.5" y2="89.78571428571429" stroke="#f2ba93" stroke-width="0.8" opacity="0.5"/>
-<polygon points="289.5,76.78571428571429 302.5,83.28571428571429 289.5,89.78571428571429 276.5,83.28571428571429" fill="#eea16b" stroke="#f2ba93" stroke-width="0.5"/>
+<polygon points="289.5,89.78571428571429 302.5,83.28571428571429 302.5,89 289.5,95.5" fill="#62501a" stroke="#3d3211" stroke-width="0.3"/>
+<polygon points="276.5,83.28571428571429 289.5,89.78571428571429 289.5,95.5 276.5,89" fill="#ac8c2e" stroke="#7b6421" stroke-width="0.3"/>
+<line x1="276.5" y1="83.28571428571429" x2="289.5" y2="89.78571428571429" stroke="#fae197" stroke-width="0.8" opacity="0.5"/>
+<polygon points="289.5,76.78571428571429 302.5,83.28571428571429 289.5,89.78571428571429 276.5,83.28571428571429" fill="#f8d671" stroke="#fae197" stroke-width="0.5"/>
 <line x1="283" y1="80.03571428571429" x2="296" y2="80.03571428571429" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="2.88s" repeatCount="indefinite"/>
     </line>
@@ -814,10 +822,10 @@
 <line x1="244" y1="113.67857142857143" x2="257" y2="113.67857142857143" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="3.7600000000000002s" repeatCount="indefinite"/>
     </line>
-<polygon points="237.5,128.78571428571428 250.5,122.28571428571429 250.5,128 237.5,134.5" fill="#5d3417" stroke="#3a210f" stroke-width="0.3"/>
-<polygon points="224.5,122.28571428571429 237.5,128.78571428571428 237.5,134.5 224.5,128" fill="#a25b29" stroke="#74411d" stroke-width="0.3"/>
-<line x1="224.5" y1="122.28571428571429" x2="237.5" y2="128.78571428571428" stroke="#f2ba93" stroke-width="0.8" opacity="0.5"/>
-<polygon points="237.5,115.78571428571429 250.5,122.28571428571429 237.5,128.78571428571428 224.5,122.28571428571429" fill="#eea16b" stroke="#f2ba93" stroke-width="0.5"/>
+<polygon points="237.5,128.78571428571428 250.5,122.28571428571429 250.5,128 237.5,134.5" fill="#62501a" stroke="#3d3211" stroke-width="0.3"/>
+<polygon points="224.5,122.28571428571429 237.5,128.78571428571428 237.5,134.5 224.5,128" fill="#ac8c2e" stroke="#7b6421" stroke-width="0.3"/>
+<line x1="224.5" y1="122.28571428571429" x2="237.5" y2="128.78571428571428" stroke="#fae197" stroke-width="0.8" opacity="0.5"/>
+<polygon points="237.5,115.78571428571429 250.5,122.28571428571429 237.5,128.78571428571428 224.5,122.28571428571429" fill="#f8d671" stroke="#fae197" stroke-width="0.5"/>
 <line x1="231" y1="119.03571428571429" x2="244" y2="119.03571428571429" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="3.84s" repeatCount="indefinite"/>
     </line>
@@ -919,10 +927,10 @@
 <line x1="257" y1="136.60714285714286" x2="270" y2="136.60714285714286" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="4.96s" repeatCount="indefinite"/>
     </line>
-<polygon points="354.5,109.28571428571429 367.5,102.78571428571429 367.5,108.5 354.5,115" fill="#5d3417" stroke="#3a210f" stroke-width="0.3"/>
-<polygon points="341.5,102.78571428571429 354.5,109.28571428571429 354.5,115 341.5,108.5" fill="#a25b29" stroke="#74411d" stroke-width="0.3"/>
-<line x1="341.5" y1="102.78571428571429" x2="354.5" y2="109.28571428571429" stroke="#f2ba93" stroke-width="0.8" opacity="0.5"/>
-<polygon points="354.5,96.28571428571429 367.5,102.78571428571429 354.5,109.28571428571429 341.5,102.78571428571429" fill="#eea16b" stroke="#f2ba93" stroke-width="0.5"/>
+<polygon points="354.5,109.28571428571429 367.5,102.78571428571429 367.5,108.5 354.5,115" fill="#62501a" stroke="#3d3211" stroke-width="0.3"/>
+<polygon points="341.5,102.78571428571429 354.5,109.28571428571429 354.5,115 341.5,108.5" fill="#ac8c2e" stroke="#7b6421" stroke-width="0.3"/>
+<line x1="341.5" y1="102.78571428571429" x2="354.5" y2="109.28571428571429" stroke="#fae197" stroke-width="0.8" opacity="0.5"/>
+<polygon points="354.5,96.28571428571429 367.5,102.78571428571429 354.5,109.28571428571429 341.5,102.78571428571429" fill="#f8d671" stroke="#fae197" stroke-width="0.5"/>
 <line x1="348" y1="99.53571428571429" x2="361" y2="99.53571428571429" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="5.04s" repeatCount="indefinite"/>
     </line>
@@ -940,10 +948,10 @@
 <line x1="322" y1="117.10714285714286" x2="335" y2="117.10714285714286" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="5.2s" repeatCount="indefinite"/>
     </line>
-<polygon points="315.5,128.78571428571428 328.5,122.28571428571429 328.5,128 315.5,134.5" fill="#5d3417" stroke="#3a210f" stroke-width="0.3"/>
-<polygon points="302.5,122.28571428571429 315.5,128.78571428571428 315.5,134.5 302.5,128" fill="#a25b29" stroke="#74411d" stroke-width="0.3"/>
-<line x1="302.5" y1="122.28571428571429" x2="315.5" y2="128.78571428571428" stroke="#f2ba93" stroke-width="0.8" opacity="0.5"/>
-<polygon points="315.5,115.78571428571429 328.5,122.28571428571429 315.5,128.78571428571428 302.5,122.28571428571429" fill="#eea16b" stroke="#f2ba93" stroke-width="0.5"/>
+<polygon points="315.5,128.78571428571428 328.5,122.28571428571429 328.5,128 315.5,134.5" fill="#62501a" stroke="#3d3211" stroke-width="0.3"/>
+<polygon points="302.5,122.28571428571429 315.5,128.78571428571428 315.5,134.5 302.5,128" fill="#ac8c2e" stroke="#7b6421" stroke-width="0.3"/>
+<line x1="302.5" y1="122.28571428571429" x2="315.5" y2="128.78571428571428" stroke="#fae197" stroke-width="0.8" opacity="0.5"/>
+<polygon points="315.5,115.78571428571429 328.5,122.28571428571429 315.5,128.78571428571428 302.5,122.28571428571429" fill="#f8d671" stroke="#fae197" stroke-width="0.5"/>
 <line x1="309" y1="119.03571428571429" x2="322" y2="119.03571428571429" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="5.28s" repeatCount="indefinite"/>
     </line>
@@ -1010,10 +1018,10 @@
 <line x1="348" y1="141.96428571428572" x2="361" y2="141.96428571428572" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="6.96s" repeatCount="indefinite"/>
     </line>
-<polygon points="341.5,154.78571428571428 354.5,148.28571428571428 354.5,154 341.5,160.5" fill="#5d3417" stroke="#3a210f" stroke-width="0.3"/>
-<polygon points="328.5,148.28571428571428 341.5,154.78571428571428 341.5,160.5 328.5,154" fill="#a25b29" stroke="#74411d" stroke-width="0.3"/>
-<line x1="328.5" y1="148.28571428571428" x2="341.5" y2="154.78571428571428" stroke="#f2ba93" stroke-width="0.8" opacity="0.5"/>
-<polygon points="341.5,141.78571428571428 354.5,148.28571428571428 341.5,154.78571428571428 328.5,148.28571428571428" fill="#eea16b" stroke="#f2ba93" stroke-width="0.5"/>
+<polygon points="341.5,154.78571428571428 354.5,148.28571428571428 354.5,154 341.5,160.5" fill="#62501a" stroke="#3d3211" stroke-width="0.3"/>
+<polygon points="328.5,148.28571428571428 341.5,154.78571428571428 341.5,160.5 328.5,154" fill="#ac8c2e" stroke="#7b6421" stroke-width="0.3"/>
+<line x1="328.5" y1="148.28571428571428" x2="341.5" y2="154.78571428571428" stroke="#fae197" stroke-width="0.8" opacity="0.5"/>
+<polygon points="341.5,141.78571428571428 354.5,148.28571428571428 341.5,154.78571428571428 328.5,148.28571428571428" fill="#f8d671" stroke="#fae197" stroke-width="0.5"/>
 <line x1="335" y1="145.03571428571428" x2="348" y2="145.03571428571428" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="7.04s" repeatCount="indefinite"/>
     </line>
@@ -1052,10 +1060,10 @@
 <line x1="348" y1="165.67857142857142" x2="361" y2="165.67857142857142" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="8.24s" repeatCount="indefinite"/>
     </line>
-<polygon points="341.5,180.78571428571428 354.5,174.28571428571428 354.5,180 341.5,186.5" fill="#5d3417" stroke="#3a210f" stroke-width="0.3"/>
-<polygon points="328.5,174.28571428571428 341.5,180.78571428571428 341.5,186.5 328.5,180" fill="#a25b29" stroke="#74411d" stroke-width="0.3"/>
-<line x1="328.5" y1="174.28571428571428" x2="341.5" y2="180.78571428571428" stroke="#f2ba93" stroke-width="0.8" opacity="0.5"/>
-<polygon points="341.5,167.78571428571428 354.5,174.28571428571428 341.5,180.78571428571428 328.5,174.28571428571428" fill="#eea16b" stroke="#f2ba93" stroke-width="0.5"/>
+<polygon points="341.5,180.78571428571428 354.5,174.28571428571428 354.5,180 341.5,186.5" fill="#62501a" stroke="#3d3211" stroke-width="0.3"/>
+<polygon points="328.5,174.28571428571428 341.5,180.78571428571428 341.5,186.5 328.5,180" fill="#ac8c2e" stroke="#7b6421" stroke-width="0.3"/>
+<line x1="328.5" y1="174.28571428571428" x2="341.5" y2="180.78571428571428" stroke="#fae197" stroke-width="0.8" opacity="0.5"/>
+<polygon points="341.5,167.78571428571428 354.5,174.28571428571428 341.5,180.78571428571428 328.5,174.28571428571428" fill="#f8d671" stroke="#fae197" stroke-width="0.5"/>
 <line x1="335" y1="171.03571428571428" x2="348" y2="171.03571428571428" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="8.32s" repeatCount="indefinite"/>
     </line>
@@ -1101,10 +1109,10 @@
 <line x1="439" y1="148.46428571428572" x2="452" y2="148.46428571428572" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="8.96s" repeatCount="indefinite"/>
     </line>
-<polygon points="419.5,167.78571428571428 432.5,161.28571428571428 432.5,167 419.5,173.5" fill="#5d3417" stroke="#3a210f" stroke-width="0.3"/>
-<polygon points="406.5,161.28571428571428 419.5,167.78571428571428 419.5,173.5 406.5,167" fill="#a25b29" stroke="#74411d" stroke-width="0.3"/>
-<line x1="406.5" y1="161.28571428571428" x2="419.5" y2="167.78571428571428" stroke="#f2ba93" stroke-width="0.8" opacity="0.5"/>
-<polygon points="419.5,154.78571428571428 432.5,161.28571428571428 419.5,167.78571428571428 406.5,161.28571428571428" fill="#eea16b" stroke="#f2ba93" stroke-width="0.5"/>
+<polygon points="419.5,167.78571428571428 432.5,161.28571428571428 432.5,167 419.5,173.5" fill="#62501a" stroke="#3d3211" stroke-width="0.3"/>
+<polygon points="406.5,161.28571428571428 419.5,167.78571428571428 419.5,173.5 406.5,167" fill="#ac8c2e" stroke="#7b6421" stroke-width="0.3"/>
+<line x1="406.5" y1="161.28571428571428" x2="419.5" y2="167.78571428571428" stroke="#fae197" stroke-width="0.8" opacity="0.5"/>
+<polygon points="419.5,154.78571428571428 432.5,161.28571428571428 419.5,167.78571428571428 406.5,161.28571428571428" fill="#f8d671" stroke="#fae197" stroke-width="0.5"/>
 <line x1="413" y1="158.03571428571428" x2="426" y2="158.03571428571428" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="9.120000000000001s" repeatCount="indefinite"/>
     </line>
@@ -1674,7 +1682,7 @@
 <text x="680" y="274" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">单日最高 35 次 ∙ 日均 ~0.99 次</text>
 <line x1="680" y1="288" x2="920" y2="288" stroke="#ffd700" stroke-width="0.5" opacity="0.2"/>
 <text x="680" y="310" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#ffd700" font-weight="600">🏮 年度总计</text>
-<text class="breathe-pulse" x="680" y="345" font-family="'Noto Serif SC', serif" font-size="32" fill="#ffd700" font-weight="700" filter="url(#glow)">365</text>
+<text class="breathe-pulse" x="680" y="345" font-family="'Noto Serif SC', serif" font-size="32" fill="#ffd700" font-weight="700" filter="url(#glow)">366</text>
 <text x="770" y="345" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">次贡献</text>
 <text x="680" y="378" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#d4a574" opacity="0.7">少</text>
 <rect x="696" y="369" width="12" height="12" rx="2" fill="#5a2020" stroke="#ffd700" stroke-width="0.3" stroke-opacity="0.3"/>
