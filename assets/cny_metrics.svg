@@ -228,13 +228,6 @@
       <animate attributeName="opacity" values="0;1;0" dur="2.5s" begin="3.2s" repeatCount="indefinite"/>
       <animate attributeName="r" values="0.4;1;0.4" dur="2.5s" begin="3.2s" repeatCount="indefinite"/>
     </circle>
-<polygon points="926.5,388 939.5,394.5 926.5,401 913.5,394.5" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
-<polygon points="913.5,394.5 926.5,401 913.5,407.5 900.5,401" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
-<polygon points="900.5,401 913.5,407.5 900.5,414 887.5,407.5" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
-<polygon points="887.5,407.5 900.5,414 887.5,420.5 874.5,414" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
-<polygon points="874.5,414 887.5,420.5 874.5,427 861.5,420.5" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
-<polygon points="861.5,420.5 874.5,427 861.5,433.5 848.5,427" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
-<polygon points="848.5,427 861.5,433.5 848.5,440 835.5,433.5" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="913.5,381.5 926.5,388 913.5,394.5 900.5,388" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="900.5,388 913.5,394.5 900.5,401 887.5,394.5" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="887.5,394.5 900.5,401 887.5,407.5 874.5,401" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
@@ -600,6 +593,14 @@
 <polygon points="185.5,82.5 198.5,89 185.5,95.5 172.5,89" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="172.5,89 185.5,95.5 172.5,102 159.5,95.5" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
 <polygon points="237.5,43.5 250.5,50 237.5,56.5 224.5,50" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
+<polygon points="224.5,50 237.5,56.5 224.5,63 211.5,56.5" fill="#4d1c1c" stroke="#6b2a2a" stroke-width="0.4" opacity="0.65"/>
+<polygon points="237.5,33.772727272727266 250.5,27.27272727272727 250.5,50 237.5,56.5" fill="#62501a" stroke="#3d3211" stroke-width="0.3"/>
+<polygon points="224.5,27.27272727272727 237.5,33.772727272727266 237.5,56.5 224.5,50" fill="#ac8c2e" stroke="#7b6421" stroke-width="0.3"/>
+<line x1="224.5" y1="27.27272727272727" x2="237.5" y2="33.772727272727266" stroke="#fae197" stroke-width="0.8" opacity="0.5"/>
+<polygon points="237.5,20.77272727272727 250.5,27.27272727272727 237.5,33.772727272727266 224.5,27.27272727272727" fill="#f8d671" stroke="#fae197" stroke-width="0.5"/>
+<line x1="231" y1="24.02272727272727" x2="244" y2="24.02272727272727" stroke="white" stroke-width="0.6">
+      <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="0s" repeatCount="indefinite"/>
+    </line>
 <polygon points="224.5,64.18181818181819 237.5,57.68181818181818 237.5,69.5 224.5,76" fill="#62501a" stroke="#3d3211" stroke-width="0.3"/>
 <polygon points="211.5,57.68181818181818 224.5,64.18181818181819 224.5,76 211.5,69.5" fill="#ac8c2e" stroke="#7b6421" stroke-width="0.3"/>
 <line x1="211.5" y1="57.68181818181818" x2="224.5" y2="64.18181818181819" stroke="#fae197" stroke-width="0.8" opacity="0.5"/>
@@ -607,25 +608,25 @@
 <line x1="218" y1="54.43181818181818" x2="231" y2="54.43181818181818" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="0.72s" repeatCount="indefinite"/>
     </line>
-<polygon points="211.5,79.77272727272727 224.5,73.27272727272727 224.5,76 211.5,82.5" fill="#571a1a" stroke="#361010" stroke-width="0.3"/>
-<polygon points="198.5,73.27272727272727 211.5,79.77272727272727 211.5,82.5 198.5,76" fill="#982d2d" stroke="#6d2020" stroke-width="0.3"/>
-<line x1="198.5" y1="73.27272727272727" x2="211.5" y2="79.77272727272727" stroke="#ea9696" stroke-width="0.8" opacity="0.5"/>
-<polygon points="211.5,66.77272727272727 224.5,73.27272727272727 211.5,79.77272727272727 198.5,73.27272727272727" fill="#e37070" stroke="#ea9696" stroke-width="0.5"/>
-<line x1="205" y1="70.02272727272727" x2="218" y2="70.02272727272727" stroke="white" stroke-width="0.6">
+<polygon points="211.5,75.22727272727272 224.5,68.72727272727272 224.5,76 211.5,82.5" fill="#5d3417" stroke="#3a210f" stroke-width="0.3"/>
+<polygon points="198.5,68.72727272727272 211.5,75.22727272727272 211.5,82.5 198.5,76" fill="#a25b29" stroke="#74411d" stroke-width="0.3"/>
+<line x1="198.5" y1="68.72727272727272" x2="211.5" y2="75.22727272727272" stroke="#f2ba93" stroke-width="0.8" opacity="0.5"/>
+<polygon points="211.5,62.22727272727273 224.5,68.72727272727272 211.5,75.22727272727272 198.5,68.72727272727272" fill="#eea16b" stroke="#f2ba93" stroke-width="0.5"/>
+<line x1="205" y1="65.47727272727272" x2="218" y2="65.47727272727272" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="0.8s" repeatCount="indefinite"/>
     </line>
-<polygon points="198.5,88.0909090909091 211.5,81.5909090909091 211.5,82.5 198.5,89" fill="#4a1212" stroke="#2e0c0c" stroke-width="0.3"/>
-<polygon points="185.5,81.5909090909091 198.5,88.0909090909091 198.5,89 185.5,82.5" fill="#812020" stroke="#5c1717" stroke-width="0.3"/>
-<line x1="185.5" y1="81.5909090909091" x2="198.5" y2="88.0909090909091" stroke="#d88c8c" stroke-width="0.8" opacity="0.5"/>
-<polygon points="198.5,75.0909090909091 211.5,81.5909090909091 198.5,88.0909090909091 185.5,81.5909090909091" fill="#ca6262" stroke="#d88c8c" stroke-width="0.5"/>
-<line x1="192" y1="78.3409090909091" x2="205" y2="78.3409090909091" stroke="white" stroke-width="0.6">
+<polygon points="198.5,80.81818181818181 211.5,74.31818181818181 211.5,82.5 198.5,89" fill="#62501a" stroke="#3d3211" stroke-width="0.3"/>
+<polygon points="185.5,74.31818181818181 198.5,80.81818181818181 198.5,89 185.5,82.5" fill="#ac8c2e" stroke="#7b6421" stroke-width="0.3"/>
+<line x1="185.5" y1="74.31818181818181" x2="198.5" y2="80.81818181818181" stroke="#fae197" stroke-width="0.8" opacity="0.5"/>
+<polygon points="198.5,67.81818181818181 211.5,74.31818181818181 198.5,80.81818181818181 185.5,74.31818181818181" fill="#f8d671" stroke="#fae197" stroke-width="0.5"/>
+<line x1="192" y1="71.06818181818181" x2="205" y2="71.06818181818181" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="0.88s" repeatCount="indefinite"/>
     </line>
-<polygon points="172.5,99.27272727272727 185.5,92.77272727272727 185.5,95.5 172.5,102" fill="#571a1a" stroke="#361010" stroke-width="0.3"/>
-<polygon points="159.5,92.77272727272727 172.5,99.27272727272727 172.5,102 159.5,95.5" fill="#982d2d" stroke="#6d2020" stroke-width="0.3"/>
-<line x1="159.5" y1="92.77272727272727" x2="172.5" y2="99.27272727272727" stroke="#ea9696" stroke-width="0.8" opacity="0.5"/>
-<polygon points="172.5,86.27272727272727 185.5,92.77272727272727 172.5,99.27272727272727 159.5,92.77272727272727" fill="#e37070" stroke="#ea9696" stroke-width="0.5"/>
-<line x1="166" y1="89.52272727272727" x2="179" y2="89.52272727272727" stroke="white" stroke-width="0.6">
+<polygon points="172.5,91.0909090909091 185.5,84.5909090909091 185.5,95.5 172.5,102" fill="#62501a" stroke="#3d3211" stroke-width="0.3"/>
+<polygon points="159.5,84.5909090909091 172.5,91.0909090909091 172.5,102 159.5,95.5" fill="#ac8c2e" stroke="#7b6421" stroke-width="0.3"/>
+<line x1="159.5" y1="84.5909090909091" x2="172.5" y2="91.0909090909091" stroke="#fae197" stroke-width="0.8" opacity="0.5"/>
+<polygon points="172.5,78.0909090909091 185.5,84.5909090909091 172.5,91.0909090909091 159.5,84.5909090909091" fill="#f8d671" stroke="#fae197" stroke-width="0.5"/>
+<line x1="166" y1="81.3409090909091" x2="179" y2="81.3409090909091" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="1.04s" repeatCount="indefinite"/>
     </line>
 <polygon points="263.5,54.95454545454545 276.5,48.45454545454545 276.5,63 263.5,69.5" fill="#62501a" stroke="#3d3211" stroke-width="0.3"/>
@@ -635,10 +636,10 @@
 <line x1="257" y1="45.20454545454545" x2="270" y2="45.20454545454545" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="1.12s" repeatCount="indefinite"/>
     </line>
-<polygon points="250.5,69.63636363636364 263.5,63.13636363636364 263.5,69.5 250.5,76" fill="#62501a" stroke="#3d3211" stroke-width="0.3"/>
-<polygon points="237.5,63.13636363636364 250.5,69.63636363636364 250.5,76 237.5,69.5" fill="#ac8c2e" stroke="#7b6421" stroke-width="0.3"/>
-<line x1="237.5" y1="63.13636363636364" x2="250.5" y2="69.63636363636364" stroke="#fae197" stroke-width="0.8" opacity="0.5"/>
-<polygon points="250.5,56.63636363636364 263.5,63.13636363636364 250.5,69.63636363636364 237.5,63.13636363636364" fill="#f8d671" stroke="#fae197" stroke-width="0.5"/>
+<polygon points="250.5,69.63636363636364 263.5,63.13636363636364 263.5,69.5 250.5,76" fill="#5d3417" stroke="#3a210f" stroke-width="0.3"/>
+<polygon points="237.5,63.13636363636364 250.5,69.63636363636364 250.5,76 237.5,69.5" fill="#a25b29" stroke="#74411d" stroke-width="0.3"/>
+<line x1="237.5" y1="63.13636363636364" x2="250.5" y2="69.63636363636364" stroke="#f2ba93" stroke-width="0.8" opacity="0.5"/>
+<polygon points="250.5,56.63636363636364 263.5,63.13636363636364 250.5,69.63636363636364 237.5,63.13636363636364" fill="#eea16b" stroke="#f2ba93" stroke-width="0.5"/>
 <line x1="244" y1="59.88636363636364" x2="257" y2="59.88636363636364" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="1.2s" repeatCount="indefinite"/>
     </line>
@@ -670,10 +671,10 @@
 <line x1="192" y1="52.25" x2="205" y2="52.25" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="1.52s" repeatCount="indefinite"/>
     </line>
-<polygon points="185.5,101.22727272727272 198.5,94.72727272727272 198.5,102 185.5,108.5" fill="#62501a" stroke="#3d3211" stroke-width="0.3"/>
-<polygon points="172.5,94.72727272727272 185.5,101.22727272727272 185.5,108.5 172.5,102" fill="#ac8c2e" stroke="#7b6421" stroke-width="0.3"/>
-<line x1="172.5" y1="94.72727272727272" x2="185.5" y2="101.22727272727272" stroke="#fae197" stroke-width="0.8" opacity="0.5"/>
-<polygon points="185.5,88.22727272727272 198.5,94.72727272727272 185.5,101.22727272727272 172.5,94.72727272727272" fill="#f8d671" stroke="#fae197" stroke-width="0.5"/>
+<polygon points="185.5,101.22727272727272 198.5,94.72727272727272 198.5,102 185.5,108.5" fill="#5d3417" stroke="#3a210f" stroke-width="0.3"/>
+<polygon points="172.5,94.72727272727272 185.5,101.22727272727272 185.5,108.5 172.5,102" fill="#a25b29" stroke="#74411d" stroke-width="0.3"/>
+<line x1="172.5" y1="94.72727272727272" x2="185.5" y2="101.22727272727272" stroke="#f2ba93" stroke-width="0.8" opacity="0.5"/>
+<polygon points="185.5,88.22727272727272 198.5,94.72727272727272 185.5,101.22727272727272 172.5,94.72727272727272" fill="#eea16b" stroke="#f2ba93" stroke-width="0.5"/>
 <line x1="179" y1="91.47727272727272" x2="192" y2="91.47727272727272" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="1.6s" repeatCount="indefinite"/>
     </line>
@@ -1601,7 +1602,7 @@
 <line x1="504" y1="260.34090909090907" x2="517" y2="260.34090909090907" stroke="white" stroke-width="0.6">
       <animate attributeName="opacity" values="0.08;0.25;0.08" dur="6s" begin="15.6s" repeatCount="indefinite"/>
     </line>
-<path id="horseRunPath" d="M263.5,63 C303.5,73 434.5,189.5 484.5,204.5 C544.5,219.5 606.5,306.5 666.5,326.5 C726.5,346.5 762.5,405.5 822.5,435.5 C852.5,455.5 882.5,460.5 862.5,480.5 L225.5,182 C195.5,162 233.5,93 263.5,63" fill="none" stroke="none"/>
+<path id="horseRunPath" d="M263.5,63 C303.5,73 421.5,183 471.5,198 C531.5,213 593.5,300 653.5,320 C713.5,340 749.5,399 809.5,429 C839.5,449 869.5,454 849.5,474 L225.5,182 C195.5,162 233.5,93 263.5,63" fill="none" stroke="none"/>
 <g opacity="0.92">
       <animateMotion dur="18s" repeatCount="indefinite" rotate="auto">
         <mpath href="#horseRunPath"/>
@@ -1793,10 +1794,10 @@
 <text x="680" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">最长连续 30 天 ∙ 当前 0 天</text>
 <line x1="680" y1="234" x2="920" y2="234" stroke="#ffd700" stroke-width="0.5" opacity="0.2"/>
 <text x="680" y="254" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#ffd700" font-weight="600">📊 每日贡献</text>
-<text x="680" y="274" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">单日最高 44 次 ∙ 日均 ~1.42 次</text>
+<text x="680" y="274" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">单日最高 44 次 ∙ 日均 ~1.58 次</text>
 <line x1="680" y1="288" x2="920" y2="288" stroke="#ffd700" stroke-width="0.5" opacity="0.2"/>
 <text x="680" y="310" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#ffd700" font-weight="600">🏮 年度总计</text>
-<text class="breathe-pulse" x="680" y="345" font-family="'Noto Serif SC', serif" font-size="32" fill="#ffd700" font-weight="700" filter="url(#glow)">530</text>
+<text class="breathe-pulse" x="680" y="345" font-family="'Noto Serif SC', serif" font-size="32" fill="#ffd700" font-weight="700" filter="url(#glow)">577</text>
 <text x="770" y="345" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#d4a574">次贡献</text>
 <text x="680" y="378" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#d4a574" opacity="0.7">少</text>
 <rect x="696" y="369" width="12" height="12" rx="2" fill="#5a2020" stroke="#ffd700" stroke-width="0.3" stroke-opacity="0.3"/>
@@ -1805,18 +1806,18 @@
 <rect x="744" y="369" width="12" height="12" rx="2" fill="#e8823a" stroke="#ffd700" stroke-width="0.3" stroke-opacity="0.3"/>
 <rect x="760" y="369" width="12" height="12" rx="2" fill="#f5c842" stroke="#ffd700" stroke-width="0.3" stroke-opacity="0.3"/>
 <text x="781" y="378" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#d4a574" opacity="0.7">多</text>
-<text x="939.5" y="384" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">六月</text>
-<text x="887.5" y="358" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">七月</text>
-<text x="835.5" y="332" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">八月</text>
-<text x="770.5" y="299.5" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">九月</text>
-<text x="718.5" y="273.5" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">十月</text>
-<text x="653.5" y="241" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">十一月</text>
-<text x="601.5" y="215" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">十二月</text>
-<text x="549.5" y="189" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">一月</text>
-<text x="484.5" y="156.5" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">二月</text>
-<text x="432.5" y="130.5" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">三月</text>
-<text x="367.5" y="98" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">四月</text>
-<text x="315.5" y="72" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">五月</text>
+<text x="926.5" y="377.5" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">七月</text>
+<text x="874.5" y="351.5" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">八月</text>
+<text x="822.5" y="325.5" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">九月</text>
+<text x="757.5" y="293" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">十月</text>
+<text x="705.5" y="267" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">十一月</text>
+<text x="653.5" y="241" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">十二月</text>
+<text x="588.5" y="208.5" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">一月</text>
+<text x="536.5" y="182.5" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">二月</text>
+<text x="484.5" y="156.5" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">三月</text>
+<text x="419.5" y="124" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">四月</text>
+<text x="367.5" y="98" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">五月</text>
+<text x="315.5" y="72" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" opacity="0.3">六月</text>
 <path d="M340,100 Q368,86 396,75.5 Q410,70.6 424,73.4" stroke="#8b4513" stroke-width="1.75" fill="none" stroke-linecap="round"/>
 <path d="M375,82.5 Q382,65 392.5,59.400000000000006" stroke="#8b4513" stroke-width="1.26" fill="none" stroke-linecap="round"/>
 <path d="M399.5,74.8 Q406.5,61.5 413.5,58" stroke="#8b4513" stroke-width="0.84" fill="none" stroke-linecap="round"/>
